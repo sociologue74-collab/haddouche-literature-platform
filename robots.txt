@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sociologue74-collab.github.io/haddouche-literature-platform/sitemap.xml
