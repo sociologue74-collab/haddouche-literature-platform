@@ -1,0 +1,1 @@
+function toggleMenu(){document.querySelector('.links')?.classList.toggle('open')}async function sharePage(){if(navigator.share){try{await navigator.share({title:document.title,url:location.href})}catch(e){}}else{navigator.clipboard.writeText(location.href);alert('تم نسخ رابط الصفحة')}}function copyLink(){navigator.clipboard.writeText(location.href);alert('تم نسخ الرابط')}
