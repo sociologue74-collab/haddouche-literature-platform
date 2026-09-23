@@ -1,0 +1,9 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الرواية | منصة حدوش للأدب والثقافة</title><meta name="description" content="أعمال روائية وفصول مختارة من الروايات."><meta name="robots" content="index,follow"><link rel="stylesheet" href="../assets/style.css"></head><body><header><div class="container"><nav><a class="brand" href="/haddouche-literature-platform/index.html"><span class="mark">ح</span><span><strong>منصة حدوش للأدب والثقافة</strong><small>حيث تجد الكلمة مكانها</small></span></a><button class="menu-btn" aria-label="القائمة">☰</button><div class="links"></div></nav></div></header><main><section class="page-hero"><div class="container"><div class="eyebrow">قسم</div><h1>الرواية</h1><p>أعمال روائية وفصول مختارة من الروايات.</p><div id="category-results"></div></div></section><script>
+const GENRE="novel";
+fetch("../assets/articles.json").then(r=>r.json()).then(items=>{
+ const list=items.filter(a=>(a.genres||[]).includes(GENRE));
+ const box=document.getElementById("category-results");
+ if(!list.length){box.innerHTML='<div class="empty-state">لا توجد نصوص منشورة في هذا القسم بعد. ستظهر هنا تلقائيًا عند إضافة أول نص.</div>';return}
+ box.innerHTML='<div class="grid">'+list.map(a=>'<a class="card" href="../articles/'+a.slug+'/index.html"><span class="tag">'+a.category+'</span><h3>'+a.title+'</h3><p>'+a.excerpt+'</p><div class="meta"><span>'+a.author+'</span></div></a>').join('')+'</div>';
+});
+</script></main><footer><div class="container"><div class="copyright">© 2026 منصة حدوش للأدب والثقافة — جميع الحقوق محفوظة.</div></div></footer><script src="../assets/site.js"></script></body></html>
