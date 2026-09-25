@@ -3,19 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>إدارة منصة حدوش</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="robots" content="noindex,nofollow">
+  <title>إدارة منصة حدوش</title>
   <style>
     body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f4f7fb;color:#10233f}
     .admin-note{max-width:900px;margin:18px auto 0;padding:14px 18px;background:#fff;border-right:5px solid #f2c94c;border-radius:12px;box-shadow:0 6px 18px rgba(11,31,58,.08)}
     .admin-note strong{color:#0b1f3a}.admin-note small{display:block;color:#667085;margin-top:4px}
   </style>
+  <script>window.CMS_MANUAL_INIT = true;</script>
 </head>
 <body>
   <div class="admin-note">
     <strong>إدارة منصة حدوش للأدب والثقافة</strong>
-    <small>هذه الصفحة خاصة بإدارة المحتوى. سجّل الدخول عبر Decap Turbo لإدارة المقالات والكتّاب مباشرة من الموقع.</small>
+    <small>لوحة خاصة بإدارة المقالات والكتّاب. تسجيل الدخول يتم بأمان عبر Decap Turbo وGitHub.</small>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/decap-cms@beta/dist/decap-cms.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/decap-cms@beta/dist/decap-cms.js?v=20260926-1"></script>
+  <script>
+    const { initCMS } = window;
+
+    initCMS({
+      config: {
+        load_config_file: false,
+        backend: {
+          name: "turbo-github",
+          turbo_site_id: "993612ee-0298-4a11-9fb2-42de593843d5",
+          branch: "main"
+        },
+
+        site_url: "https://sociologue74-collab.github.io/haddouche-literature-platform/",
+        display_url: "https://sociologue74-collab.github.io/haddouche-literature-platform/",
+        media_folder: "assets/uploads",
+        public_folder: "/haddouche-literature-platform/assets/uploads",
+        locale: "ar",
+        publish_mode: "simple",
+
+        slug: {
+          encoding: "ascii",
+          clean_accents: true,
+          sanitize_replacement: "-"
+        },
+
+        collections: [
+          {
+            name: "articles",
+            identifier_field: "slug",
+            label: "المقالات والنصوص",
+            label_singular: "نص",
+            folder: "_articles",
+            create: true,
+            delete: true,
+            extension: "md",
+            format: "frontmatter",
+            slug: "{{slug}}",
+            summary: "{{title}} — {{author}}",
+            sortable_fields: ["date","title","author"],
+            fields: [
+              {label:"العنوان",name:"title",widget:"string"},
+              {label:"الرابط المختصر",name:"slug",widget:"string",hint:"اكتب حروفًا لاتينية مثل: qalb-taeh"},
+              {label:"الكاتب",name:"author",widget:"string"},
+              {label:"البلد",name:"country",widget:"string",default:"الجزائر"},
+              {
+                label:"القسم",name:"category",widget:"select",
+                options:["الشعر","القصة القصيرة","الرواية","المقال الأدبي","النقد الأدبي","الفكر والتأمل","الثقافة"]
+              },
+              {label:"السلسلة",name:"series",widget:"string",required:false},
+              {label:"تاريخ النشر",name:"date",widget:"datetime",format:"YYYY-MM-DD",date_format:"YYYY-MM-DD",time_format:false},
+              {label:"مقتطف",name:"excerpt",widget:"text"},
+              {label:"الكلمات المفتاحية",name:"tags",widget:"list",required:false},
+              {label:"منشور",name:"published",widget:"boolean",default:true},
+              {label:"النص",name:"body",widget:"markdown"}
+            ]
+          },
+          {
+            name: "writers",
+            identifier_field: "slug",
+            label: "الكتّاب",
+            label_singular: "كاتب",
+            folder: "_writers",
+            create: true,
+            delete: true,
+            extension: "md",
+            format: "frontmatter",
+            slug: "{{slug}}",
+            summary: "{{name}} — {{country}}",
+            fields: [
+              {label:"الاسم",name:"name",widget:"string"},
+              {label:"الرابط المختصر",name:"slug",widget:"string",hint:"اكتب حروفًا لاتينية مثل: ahmed-benali"},
+              {label:"الأحرف المختصرة",name:"initials",widget:"string",required:false},
+              {label:"البلد",name:"country",widget:"string"},
+              {label:"المدينة",name:"city",widget:"string",required:false},
+              {label:"الصفة",name:"role",widget:"string",default:"كاتب"},
+              {label:"نبذة",name:"bio",widget:"text"},
+              {label:"الموضوعات",name:"topics",widget:"list",required:false}
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
