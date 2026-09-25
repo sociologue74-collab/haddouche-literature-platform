@@ -5,6 +5,9 @@ backend:
 
 site_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
 display_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
+
+media_folder: "assets/uploads"
+public_folder: "/haddouche-literature-platform/assets/uploads"
 logo_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
 
 locale: ar
