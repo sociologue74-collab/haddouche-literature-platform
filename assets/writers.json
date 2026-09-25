@@ -1,16 +1,15 @@
+---
+---
 [
+{% for w in site.writers %}
   {
-    "name": "بومدين حدوش",
-    "slug": "boumediene-haddouche",
-    "country": "الجزائر",
-    "city": "تلمسان",
-    "role": "كاتب وباحث",
-    "bio": "كاتب وباحث جزائري يهتم بالأدب والمجتمع والتاريخ والثقافة، ومؤسس منصة حدوش للأدب والثقافة.",
-    "topics": [
-      "الأدب",
-      "المجتمع",
-      "التاريخ",
-      "الثقافة"
-    ]
-  }
+    "name": {{ w.name | jsonify }},
+    "slug": {{ w.slug | default: w.basename_without_ext | jsonify }},
+    "country": {{ w.country | default: "" | jsonify }},
+    "city": {{ w.city | default: "" | jsonify }},
+    "role": {{ w.role | default: "كاتب" | jsonify }},
+    "bio": {{ w.bio | default: "" | jsonify }},
+    "topics": {{ w.topics | default: empty | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
 ]
