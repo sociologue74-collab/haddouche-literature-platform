@@ -19,6 +19,7 @@ slug:
 
 collections:
   - name: "articles"
+    identifier_field: "slug"
     label: "المقالات والنصوص"
     label_singular: "نص"
     folder: "_articles"
@@ -53,6 +54,7 @@ collections:
       - {label: "النص", name: "body", widget: "markdown"}
 
   - name: "writers"
+    identifier_field: "slug"
     label: "الكتّاب"
     label_singular: "كاتب"
     folder: "_writers"
@@ -71,17 +73,3 @@ collections:
       - {label: "الصفة", name: "role", widget: "string", default: "كاتب"}
       - {label: "نبذة", name: "bio", widget: "text"}
       - {label: "الموضوعات", name: "topics", widget: "list", required: false}
-
-  - name: "pages"
-    label: "صفحات ثابتة"
-    files:
-      - label: "من نحن"
-        name: "about"
-        file: "about.html"
-        fields:
-          - {label: "المحتوى", name: "body", widget: "text"}
-      - label: "شروط النشر"
-        name: "submissions"
-        file: "submissions.html"
-        fields:
-          - {label: "المحتوى", name: "body", widget: "text"}
