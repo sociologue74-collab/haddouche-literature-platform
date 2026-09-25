@@ -302,3 +302,46 @@ footer a:hover{color:var(--yellow)}
   .article-body{font-size:1.03rem}
   .hero{padding:66px 0 52px}
 }
+
+/* تحسين وضوح عناوين صفحات الأقسام */
+.page-hero{
+  background:linear-gradient(135deg,#ffffff 0%,#fff9df 55%,#eef3f8 100%)!important;
+  color:#111111!important;
+  border-top:6px solid #0b1f3a!important;
+  border-bottom:5px solid #f2c94c!important;
+}
+.page-hero .eyebrow,
+.page-hero>.container>.eyebrow{
+  color:#7a1f2b!important;
+  font-weight:900!important;
+  font-size:1rem!important;
+}
+.page-hero .eyebrow:before,
+.page-hero>.container>.eyebrow:before{
+  background:#f2c94c!important;
+}
+.page-hero h1,
+.page-hero>.container>h1{
+  color:#111111!important;
+  font-weight:900!important;
+  text-shadow:none!important;
+}
+.page-hero p,
+.page-hero>.container>p{
+  color:#2f3540!important;
+}
+.page-hero .card,
+.page-hero .prose,
+.page-hero .empty-state,
+.page-hero .searchbox,
+.page-hero .writer-card{
+  background:#ffffff!important;
+  color:#111111!important;
+}
+.page-hero .card h3,
+.page-hero .prose h1,
+.page-hero .prose h2,
+.page-hero .prose h3,
+.page-hero .writer-card h1{
+  color:#0b1f3a!important;
+}
