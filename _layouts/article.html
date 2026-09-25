@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }} | منصة حدوش للأدب والثقافة</title>
+  <meta name="description" content="{{ page.excerpt | default: page.title | strip_html | escape }}">
+  <meta name="robots" content="{% if page.published == false %}noindex,nofollow{% else %}index,follow{% endif %}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css?v=20260925-cms1">
+</head>
+<body>
+<header><div class="container"><nav>
+  <a class="brand" href="{{ site.baseurl }}/index.html"><span class="mark">ح</span><span><strong>منصة حدوش للأدب والثقافة</strong><small>حيث تجد الكلمة مكانها</small></span></a>
+  <button class="menu-btn" aria-label="القائمة">☰</button><div class="links"></div>
+</nav></div></header>
+<main>
+  <article class="article-wrap">
+    <div class="breadcrumbs"><a href="{{ site.baseurl }}/index.html">الرئيسية</a> ← <a href="{{ site.baseurl }}/latest.html">أحدث النصوص</a></div>
+    <header class="article-head">
+      <div class="eyebrow">{{ page.category | default: "نص أدبي" }}</div>
+      <h1>{{ page.title }}</h1>
+      <div class="meta">
+        <span>{{ page.author }}</span>
+        {% if page.country %}<span>•</span><span>{{ page.country }}</span>{% endif %}
+        {% if page.date %}<span>•</span><span>{{ page.date | date: "%Y-%m-%d" }}</span>{% endif %}
+      </div>
+    </header>
+    <div class="article-body">{{ content }}</div>
+    <div class="share"><button onclick="sharePage()">مشاركة</button><button onclick="copyLink()">نسخ الرابط</button></div>
+  </article>
+</main>
+<script src="{{ site.baseurl }}/assets/site.js"></script>
+</body>
+</html>
