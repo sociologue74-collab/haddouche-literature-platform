@@ -345,3 +345,155 @@ footer a:hover{color:var(--yellow)}
 .page-hero .writer-card h1{
   color:#0b1f3a!important;
 }
+
+/* ===== توحيد الخطوط والمسافات والإيقاع البصري ===== */
+body{
+  font-size:17px;
+  line-height:1.85;
+}
+.container{width:min(1160px,92%);}
+
+nav{min-height:76px}
+.brand strong{font-size:1.08rem;line-height:1.35}
+.brand small{font-size:.82rem;margin-top:2px}
+.links{font-size:.94rem;gap:16px}
+
+.hero{padding:78px 0 62px}
+.hero-grid{gap:50px}
+.hero h1{
+  font-size:clamp(2.7rem,5.4vw,4.8rem);
+  line-height:1.13;
+  margin:.55rem 0 1rem;
+  letter-spacing:-.015em;
+}
+.hero p{
+  font-size:1.08rem;
+  line-height:1.95;
+  max-width:680px;
+}
+.hero-actions{margin-top:24px}
+.feature-card{padding:32px}
+.feature-card h2{font-size:1.75rem;line-height:1.4;margin:.35rem 0 .7rem}
+.feature-card p{font-size:1rem;line-height:1.85}
+
+section{padding:54px 0}
+.section-head{margin-bottom:26px}
+.section-head h2{
+  font-size:clamp(1.65rem,2.8vw,2.15rem);
+  line-height:1.4;
+}
+.eyebrow{
+  font-size:.92rem;
+  line-height:1.5;
+  margin-bottom:4px;
+}
+
+.grid{
+  gap:22px;
+  align-items:stretch;
+}
+.card{
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  padding:26px;
+}
+.card h3{
+  font-size:1.28rem;
+  line-height:1.55;
+  margin:.55rem 0 .65rem;
+}
+.card p{
+  font-size:.96rem;
+  line-height:1.8;
+  margin:.1rem 0 1rem;
+}
+.card .meta{margin-top:auto}
+
+.category-strip{
+  gap:18px;
+  align-items:stretch;
+}
+.category{
+  min-height:142px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:24px 20px;
+}
+.category strong{
+  font-size:1.08rem;
+  line-height:1.5;
+  margin-bottom:6px;
+}
+.category span{
+  font-size:.9rem;
+  line-height:1.65;
+}
+
+.page-hero{
+  padding:58px 0 42px!important;
+}
+.page-hero h1,
+.page-hero>.container>h1{
+  font-size:clamp(2.1rem,4.3vw,3.45rem)!important;
+  line-height:1.25!important;
+  margin:.25rem 0 .65rem!important;
+}
+.page-hero>.container>p{
+  max-width:780px;
+  font-size:1rem!important;
+  line-height:1.85!important;
+  margin-top:0!important;
+}
+
+.prose,.article-body{
+  font-size:1.04rem;
+  line-height:2;
+}
+.prose h2,.article-body h2{
+  font-size:1.5rem;
+  line-height:1.45;
+  margin:1.8rem 0 .65rem;
+}
+.prose h3,.article-body h3{
+  font-size:1.22rem;
+  line-height:1.5;
+  margin:1.4rem 0 .5rem;
+}
+.prose p,.article-body p{
+  margin:.2rem 0 1.15rem;
+}
+
+.searchbox{margin-top:22px}
+.empty-state{
+  font-size:.98rem;
+  line-height:1.8;
+  padding:30px 24px;
+}
+
+.footer-grid{gap:36px}
+footer{padding:42px 0}
+footer h3{font-size:1.22rem;margin-top:0}
+footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
+
+@media(max-width:850px){
+  body{font-size:16px}
+  section{padding:44px 0}
+  .hero{padding:58px 0 48px}
+  .hero-grid{gap:28px}
+  .hero h1{font-size:clamp(2.35rem,10vw,3.5rem)}
+  .feature-card{padding:26px}
+  .card{min-height:auto}
+  .category{min-height:122px}
+  .page-hero{padding:46px 0 34px!important}
+}
+@media(max-width:520px){
+  .container{width:min(94%,1160px)}
+  .hero h1{font-size:2.45rem}
+  .section-head h2{font-size:1.6rem}
+  .page-hero h1,.page-hero>.container>h1{font-size:2rem!important}
+  .card{padding:22px}
+  .category{padding:20px 16px}
+  .prose,.article-body{padding:24px 20px}
+}
