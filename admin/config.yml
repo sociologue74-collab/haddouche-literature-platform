@@ -1,0 +1,87 @@
+backend:
+  name: github
+  repo: sociologue74-collab/haddouche-literature-platform
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+site_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
+display_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
+logo_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
+
+locale: ar
+publish_mode: simple
+
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: "articles"
+    label: "المقالات والنصوص"
+    label_singular: "نص"
+    folder: "_articles"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{author}}"
+    sortable_fields: ["date", "title", "author"]
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الرابط المختصر", name: "slug", widget: "string", hint: "اكتب حروفًا لاتينية مثل: qalb-taeh"}
+      - {label: "الكاتب", name: "author", widget: "string"}
+      - {label: "البلد", name: "country", widget: "string", default: "الجزائر"}
+      - label: "القسم"
+        name: "category"
+        widget: "select"
+        options:
+          - "الشعر"
+          - "القصة القصيرة"
+          - "الرواية"
+          - "المقال الأدبي"
+          - "النقد الأدبي"
+          - "الفكر والتأمل"
+          - "الثقافة"
+      - {label: "السلسلة", name: "series", widget: "string", required: false}
+      - {label: "تاريخ النشر", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "مقتطف", name: "excerpt", widget: "text"}
+      - {label: "الكلمات المفتاحية", name: "tags", widget: "list", required: false}
+      - {label: "منشور", name: "published", widget: "boolean", default: true}
+      - {label: "النص", name: "body", widget: "markdown"}
+
+  - name: "writers"
+    label: "الكتّاب"
+    label_singular: "كاتب"
+    folder: "_writers"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{name}} — {{country}}"
+    fields:
+      - {label: "الاسم", name: "name", widget: "string"}
+      - {label: "الرابط المختصر", name: "slug", widget: "string", hint: "اكتب حروفًا لاتينية مثل: ahmed-benali"}
+      - {label: "الأحرف المختصرة", name: "initials", widget: "string", required: false}
+      - {label: "البلد", name: "country", widget: "string"}
+      - {label: "المدينة", name: "city", widget: "string", required: false}
+      - {label: "الصفة", name: "role", widget: "string", default: "كاتب"}
+      - {label: "نبذة", name: "bio", widget: "text"}
+      - {label: "الموضوعات", name: "topics", widget: "list", required: false}
+
+  - name: "pages"
+    label: "صفحات ثابتة"
+    files:
+      - label: "من نحن"
+        name: "about"
+        file: "about.html"
+        fields:
+          - {label: "المحتوى", name: "body", widget: "text"}
+      - label: "شروط النشر"
+        name: "submissions"
+        file: "submissions.html"
+        fields:
+          - {label: "المحتوى", name: "body", widget: "text"}
