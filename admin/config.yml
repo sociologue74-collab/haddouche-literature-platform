@@ -1,9 +1,7 @@
 backend:
-  name: github
-  repo: sociologue74-collab/haddouche-literature-platform
+  name: turbo-github
+  turbo_site_id: 993612ee-0298-4a11-9fb2-42de593843d5
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 site_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
 display_url: https://sociologue74-collab.github.io/haddouche-literature-platform/
