@@ -14,7 +14,9 @@
 </nav></div></header>
 <main><section class="page-hero"><div class="container">
   <div class="prose writer-card">
-    {% if page.image %}
+    {% if page.slug == "boumediene-haddouche" %}
+    <img class="writer-photo" src="{{ site.baseurl }}/assets/uploads/boumediene-haddouche.jpg?v=20260926-portrait2" alt="صورة بومدين حدوش" loading="eager">
+    {% elsif page.image %}
     <img class="writer-photo" src="{{ page.image }}" alt="صورة {{ page.name }}" loading="lazy">
     {% else %}
     <div class="avatar">{{ page.initials | default: "ك" }}</div>
