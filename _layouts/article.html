@@ -6,7 +6,7 @@
   <title>{{ page.title }} | منصة حدوش للأدب والثقافة</title>
   <meta name="description" content="{{ page.excerpt | default: page.title | strip_html | escape }}">
   <meta name="robots" content="{% if page.published == false %}noindex,nofollow{% else %}index,follow{% endif %}">
-  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}"><link rel="alternate" type="application/rss+xml" title="منصة حدوش للأدب والثقافة" href="{{ site.url }}{{ site.baseurl }}/feed.xml"><meta property="og:type" content="article"><meta property="og:title" content="{{ page.title | escape }}"><meta property="og:description" content="{{ page.excerpt | default: page.title | strip_html | escape }}"><meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}"><meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/haddouche-logo.jpg">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css?v=20260925-cms1">
 </head>
 <body>
@@ -27,7 +27,7 @@
       </div>
     </header>
     <div class="article-body">{{ content }}</div>
-    <div class="share"><button onclick="sharePage()">مشاركة</button><button onclick="copyLink()">نسخ الرابط</button></div>
+    <div class="share" aria-label="مشاركة النص"><strong class="share-label">شارك النص</strong><button onclick="sharePage()">مشاركة</button><button onclick="shareToFacebook()">Facebook</button><button onclick="shareToX()">X</button><button onclick="copyLink()">نسخ الرابط</button></div>
   </article>
 </main>
 <script src="{{ site.baseurl }}/assets/site.js"></script>
