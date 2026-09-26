@@ -512,3 +512,17 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
 @media(max-width:850px){
   .writer-photo{margin:auto;width:116px;height:116px}
 }
+
+/* تثبيت عرض صورة الكاتب */
+.writer-card{grid-template-columns:150px 1fr!important;align-items:center!important}
+.writer-photo{
+  width:136px!important;
+  height:136px!important;
+  object-fit:cover!important;
+  object-position:center 18%!important;
+  border-radius:28px!important;
+}
+@media(max-width:850px){
+  .writer-card{grid-template-columns:1fr!important}
+  .writer-photo{width:132px!important;height:132px!important;margin:auto!important}
+}
