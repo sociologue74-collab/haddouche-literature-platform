@@ -526,3 +526,90 @@ footer p,footer a,footer small{font-size:.92rem;line-height:1.75}
   .writer-card{grid-template-columns:1fr!important}
   .writer-photo{width:132px!important;height:132px!important;margin:auto!important}
 }
+
+/* ===== تحسين نهائي لبطاقة الكاتب ===== */
+.writer-card{
+  display:grid!important;
+  grid-template-columns:170px minmax(0,1fr)!important;
+  gap:30px!important;
+  align-items:center!important;
+  padding:34px 38px!important;
+  border-radius:26px!important;
+}
+
+.writer-card > div:last-child{
+  min-width:0;
+}
+
+.writer-card .eyebrow{
+  margin-bottom:6px!important;
+  font-size:.95rem!important;
+  color:var(--burgundy)!important;
+}
+
+.writer-card h1{
+  margin:.15rem 0 .65rem!important;
+  font-size:clamp(2.15rem,4vw,3.35rem)!important;
+  line-height:1.2!important;
+  color:#111111!important;
+}
+
+.writer-card p{
+  margin:.2rem 0 .9rem!important;
+  max-width:720px!important;
+  font-size:1rem!important;
+  line-height:1.9!important;
+  color:#334155!important;
+}
+
+.writer-card .meta{
+  margin-top:.35rem!important;
+  font-size:.9rem!important;
+  color:#667085!important;
+}
+
+.writer-photo{
+  width:150px!important;
+  height:188px!important;
+  object-fit:cover!important;
+  object-position:center 14%!important;
+  border-radius:22px!important;
+  border:3px solid var(--yellow)!important;
+  background:#fff!important;
+  box-shadow:0 10px 24px rgba(11,31,58,.10)!important;
+  display:block!important;
+}
+
+@media(max-width:850px){
+  .writer-card{
+    grid-template-columns:1fr!important;
+    gap:20px!important;
+    text-align:center!important;
+    padding:28px 22px!important;
+  }
+  .writer-photo{
+    width:138px!important;
+    height:172px!important;
+    margin:auto!important;
+  }
+  .writer-card p{
+    margin-left:auto!important;
+    margin-right:auto!important;
+  }
+  .writer-card .meta{
+    justify-content:center!important;
+  }
+}
+
+@media(max-width:520px){
+  .writer-card{
+    padding:24px 18px!important;
+  }
+  .writer-photo{
+    width:128px!important;
+    height:160px!important;
+  }
+  .writer-card h1{
+    font-size:2rem!important;
+  }
+}
