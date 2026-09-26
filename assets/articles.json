@@ -22,6 +22,7 @@
       {% endcase %}
     ],
     "series": {{ a.series | default: "" | jsonify }},
+    "featured": {{ a.featured | default: false | jsonify }},
     "tags": {{ a.tags | default: empty | jsonify }},
     "date": {{ a.date | date: "%Y-%m-%d" | jsonify }}
   }{% unless forloop.last %},{% endunless %}
