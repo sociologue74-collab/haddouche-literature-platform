@@ -14,7 +14,11 @@
 </nav></div></header>
 <main><section class="page-hero"><div class="container">
   <div class="prose writer-card">
+    {% if page.image %}
+    <img class="writer-photo" src="{{ page.image }}" alt="صورة {{ page.name }}" loading="lazy">
+    {% else %}
     <div class="avatar">{{ page.initials | default: "ك" }}</div>
+    {% endif %}
     <div><div class="eyebrow">{{ page.role | default: "كاتب" }}</div><h1>{{ page.name }}</h1><p>{{ page.bio }}</p>
     <div class="meta"><span>{{ page.country }}</span>{% if page.city %}<span>•</span><span>{{ page.city }}</span>{% endif %}</div></div>
   </div>
