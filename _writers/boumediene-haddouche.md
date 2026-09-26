@@ -2,6 +2,7 @@
 name: "بومدين حدوش"
 slug: "boumediene-haddouche"
 initials: "ب ح"
+image: "/haddouche-literature-platform/assets/uploads/boumediene-haddouche.jpg"
 country: "الجزائر"
 city: "تلمسان"
 role: "كاتب وباحث"
