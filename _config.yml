@@ -7,7 +7,7 @@ direction: rtl
 collections:
   articles:
     output: true
-    permalink: /articles/:name/
+    permalink: /articles/:name/index.html
   writers:
     output: true
     permalink: /writers/:name.html
