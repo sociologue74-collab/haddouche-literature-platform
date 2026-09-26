@@ -50,6 +50,7 @@ collections:
       - {label: "السلسلة", name: "series", widget: "string", required: false}
       - {label: "تاريخ النشر", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "مقتطف", name: "excerpt", widget: "text"}
+      - {label: "نص مختار", name: "featured", widget: "boolean", default: false, required: false, hint: "فعّله ليظهر النص بصورة بارزة في الصفحة الرئيسية."}
       - {label: "الكلمات المفتاحية", name: "tags", widget: "list", required: false}
       - {label: "منشور", name: "published", widget: "boolean", default: true}
       - {label: "النص", name: "body", widget: "markdown"}
