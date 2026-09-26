@@ -7,10 +7,36 @@ document.addEventListener("DOMContentLoaded",()=>{
     u.searchParams.set("v","20260925-typography2");
     styleLink.href=u.toString();
   }
+  // الشعار الرسمي للمنصة
+  let favicon=document.querySelector('link[rel="icon"]');
+  if(!favicon){
+    favicon=document.createElement("link");
+    favicon.rel="icon";
+    favicon.type="image/jpeg";
+    document.head.appendChild(favicon);
+  }
+  favicon.href=BASE+"/assets/haddouche-logo.jpg?v=20260926-logo1";
+
   const nav=document.querySelector("nav");
   if(!nav)return;
   const brand=nav.querySelector(".brand");
-  if(brand)brand.href=BASE+"/index.html";
+  if(brand){
+    brand.href=BASE+"/index.html";
+    const oldMark=brand.querySelector(".mark");
+    if(oldMark){
+      const logo=document.createElement("img");
+      logo.className="brand-logo";
+      logo.src=BASE+"/assets/haddouche-logo.jpg?v=20260926-logo1";
+      logo.alt="شعار منصة حدوش للأدب والثقافة";
+      oldMark.replaceWith(logo);
+    } else if(!brand.querySelector(".brand-logo")){
+      const logo=document.createElement("img");
+      logo.className="brand-logo";
+      logo.src=BASE+"/assets/haddouche-logo.jpg?v=20260926-logo1";
+      logo.alt="شعار منصة حدوش للأدب والثقافة";
+      brand.prepend(logo);
+    }
+  }
   let btn=nav.querySelector(".menu-btn");
   if(!btn){btn=document.createElement("button");btn.className="menu-btn";btn.type="button";btn.setAttribute("aria-label","القائمة");btn.textContent="☰";brand?.after(btn)}
   let links=nav.querySelector(".links");
