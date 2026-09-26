@@ -1,4 +1,6 @@
 ---
+layout: article
+permalink: /articles/al-ghurfa-07/index.html
 title: "الغرفة 07"
 slug: "al-ghurfa-07"
 author: "بومدين حدوش"
