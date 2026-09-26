@@ -8,6 +8,7 @@
     "country": {{ w.country | default: "" | jsonify }},
     "city": {{ w.city | default: "" | jsonify }},
     "role": {{ w.role | default: "كاتب" | jsonify }},
+    "image": {{ w.image | default: "" | jsonify }},
     "bio": {{ w.bio | default: "" | jsonify }},
     "topics": {{ w.topics | default: empty | jsonify }}
   }{% unless forloop.last %},{% endunless %}
